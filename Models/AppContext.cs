@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace AnimeTitles;
+namespace AnimeTitles.Models;
 
-public partial class AnimeTitlesContext : DbContext
+public partial class AppContext : DbContext
 {
-    public AnimeTitlesContext()
+    // конструктор класса AnimeTitlesContext
+    public AppContext()
     {
     }
 
-    public AnimeTitlesContext(DbContextOptions<AnimeTitlesContext> options)
+    public AppContext(DbContextOptions<AppContext> options)
         : base(options)
     {
     }
-
+    // свойства 
     public virtual DbSet<AnimeTitle> AnimeTitles { get; set; }
 
     public virtual DbSet<AnimeType> AnimeTypes { get; set; }
